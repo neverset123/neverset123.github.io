@@ -46,7 +46,6 @@ horizontal: false
   <!-- Generate cards for each project -->
 
   <div class="publications">
-    <h2>Selected Projects</h2>
     {% bibliography -f papers -q @*[selected=true]* %}
     <hr>
   </div>
