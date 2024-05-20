@@ -1,6 +1,6 @@
 ---
 layout: page
-title: project 1
+title: RealEstateProject
 description: real estate estimator
 img: assets/img/12.jpg
 importance: 1
