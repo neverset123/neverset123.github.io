@@ -1,5 +1,6 @@
 ---
 layout: project_page
+category: work
 
 projectname: DriveGPT4
 title: Interpretable End-to-end Autonomous Driving via Large Language Model
