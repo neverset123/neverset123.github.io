@@ -7,27 +7,10 @@ title: Interpretable End-to-end Autonomous Driving via Large Language Model
 author1: Zhenhua Xu
 author1link: https://tonyxuqaq.github.io/
 author2: Yujia Zhang
-author2link: https://yujia-zhang0913.github.io/
-author3: Enze Xie
-author3link: https://xieenze.github.io/
-author4: Zhen Zhao
-author4link: http://zhaozhen.me/
-author5: Yong Guo
-author5link: https://www.guoyongcs.com/
-author6: Kwan-Yee. K. Wong
-author6link: https://i.cs.hku.hk/~kykwong/
-author7: Zhenguo Li
-author7link: https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=en
-author8: Hengshuang Zhao
-author8link: https://hszhao.github.io/
 affiliations:
     The University of Hong Kong 
 affiliations2:
     Zhejiang University
-affiliations3:
-    Huawei Noah's Ark Lab
-affiliations4:
-    University of Sydney 
 paper: ../../assets/pdf/DriveGPT4.pdf
 arxiv: https://arxiv.org/abs/2310.01412
 video: https://youtu.be/CPoskBNjHlk
