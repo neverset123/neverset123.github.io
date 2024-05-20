@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - neverset123
+  - yuwewan
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - neverset123/Self-Driving-Car
+  - neverset123/CloudFoundation
+  - neverset123/ML_Uncertainty
