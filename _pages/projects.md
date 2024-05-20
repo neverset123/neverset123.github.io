@@ -1,5 +1,5 @@
 ---
-layout: project_page
+layout: page
 title: projects
 permalink: /projects/
 description:
@@ -45,21 +45,10 @@ horizontal: false
 
   <!-- Generate cards for each project -->
 
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
+  <div class="publications">
+    <h2>Selected Projects</h2>
+    {% bibliography -f papers -q @*[selected=true]* %}
+    <hr>
   </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
 {% endif %}
 </div>
