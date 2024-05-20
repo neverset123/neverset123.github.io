@@ -11,7 +11,6 @@ affiliations:
     The University of Hong Kong 
 affiliations2:
     Zhejiang University
-paper: ../../assets/pdf/DriveGPT4.pdf
 arxiv: https://arxiv.org/abs/2310.01412
 video: https://youtu.be/CPoskBNjHlk
 code: https://arxiv.org/abs/2310.01412
