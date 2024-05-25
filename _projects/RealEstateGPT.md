@@ -3,7 +3,7 @@ layout: project_page
 category: work
 
 projectname: RealEstateGPT
-title: Incorporating Real Estate Data into Large Language Models for investment recommandation
+title: Large Language Models for Investment Recommandation
 author1: YW. Wang
 author1link: https://neverset123.github.io/
 author2: J. Jiao
@@ -31,8 +31,20 @@ data:
         <h2>Abstract</h2>
         <div class="content has-text-justified">
         
-<p>Large language models (LLMs) have emerged as a prominent tool for different areas , given their proficiency in handling and reasoning with unstructured data, including image, text and numbers. This project seeks to apply LLMs to the real estate data by introducing a novel interpretable and predictable price estimatation and recommandation system based on LLMs. with its capability of processing multimodal input data, LLM facilitates the interpretation of unstructured data in different formats, and effectively reasoning and extracting usefull data for further recommandation. </p>
-<p>These estimation and recommandation capabilities are achieved through the utilization of dataset from Immowelt and ImmoScout24 through targetted finetuning strategy. The fine-tuning of domain-specific data enables LLM to yield accurate results in terms of real estate property estimation and further investment recommandation.</p>
+<p>Real estate investment has always been a dynamic field, influenced by property attributes, market trends, economic conditions, and investor sentiment. In recent years, large language models (LLMs) have emerged as powerful tools for analyzing and predicting various aspects of the real estate market. </p>
+<p> This project seeks to apply LLMs to the real estate data by introducing a novel interpretable and predictable price estimatation and recommandation system.  With its capability of processing multimodal input data(image, text and table), this smart agent RealEstateGPT will facilitate the interpretation of various data sources and data formats, and effectively generate useful market analysis, property valuation and customer assistance in real estate market.</p>
+<p>These analysis and recommandation capabilities of RealEstateGPT are achieved through targetted LLMs finetuning with domain-specific dataset and real time market information. User could not only get specific market object report, but also interactivly ask the agent for further investment recommandation in terms of real estate property.</p>
+        </div>
+    </div>
+</div>
+
+---
+
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Business Model</h2>
+        <div class="content has-text-justified">
+        The RealEstateGPT will be provided as SaaS(Software as s Service), which allows users to utilize the power of LLMs without having to train the models themselves. Users pay a fee based on the amount of usage or a monthlich subscription fee without usage amount limitation. 
         </div>
     </div>
 </div>
@@ -43,7 +55,7 @@ data:
     <div class="column is-four-fifths">
         <h2>Objective</h2>
         <div class="content has-text-justified">
-Estimating real estate prices involves analyzing various factors that influence the value of a property. This RealEstateGPT will provice a comprehensive guide to estimating real estate price by including location, perperty characteristics, market conditions and comparable sale data.
+Estimating real estate prices involves analyzing various factors that influence the value of a property. This RealEstateGPT will provice a comprehensive guide to estimating real estate property value by including location, perperty characteristics, market conditions and comparable sale data.
         </div>
     </div>
 </div>
@@ -54,7 +66,7 @@ Estimating real estate prices involves analyzing various factors that influence 
     <div class="column is-four-fifths">
         <h2>Key Ideas</h2>
         <div class="content has-text-justified">
-<p>The key idea behind a RealEstateGPT is to leverage advanced language models to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:</p>
+<p>The key idea behind a RealEstateGPT is to leverage advanced LLMs to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:</p>
 
 <p>1. Market Analysis and Insights</p>
 <p>Trend Analysis: Identify and analyze market trends based on vast amounts of data from multiple sources, including historical prices, sales data, and economic indicators.</p>
@@ -76,14 +88,15 @@ Estimating real estate prices involves analyzing various factors that influence 
 
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-        <h2>Technical Steps</h2>
+        <h2>Technical Architecture</h2>
         <p align="center">
             <img style="width: 100%" src="img/structure.png" />
         </p>
         <div class="content has-text-justified">
-<p>1. Data collection: collect public and commercial real estate data by API and scraping</p>
-<p>2. Customization: Tailor the large language model to understand specific real estate terminology, regulations, and market conditions.</p>
-<p>3. User Interface Development: Develop user-friendly interfaces for real estate professionals and customers to interact with the AI.</p>
+<p>1. Data Preprocessing:clean and preprocess input unstructured data with cognitive recognization model to extract meaningful information</p>
+<p>2. Embedding: extracted data in different format are converted to unified embeddings with fine-tuned LLM</p>
+<p>3. ML Prediction: vector embeddings are fed into trained ML model to get the predictions </p>
+<p>4. User Interaction: users are allowed to input natural language queries or commands, which the LLM then processes to interact with the embeddings.</p>
         </div>
     </div>
 </div>
