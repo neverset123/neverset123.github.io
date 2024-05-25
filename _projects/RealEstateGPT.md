@@ -3,16 +3,16 @@ layout: project_page
 category: work
 
 projectname: RealEstateGPT
-title: Incorporating Real Estate Data into Large Language Models for sale price estimation
-author1: Yuwei Wang
+title: Incorporating Real Estate Data into Large Language Models for investment recommandation
+author1: YW. Wang
 author1link: https://neverset123.github.io/
-author2: Jiao Jiao
+author2: J. Jiao
 affiliations:
     Mercedes-Benz Group
 affiliations2:
     ByteDance Group
 Arxiv:
-video: https://youtu.be/CPoskBNjHlk
+video: 
 code: 
 data: 
 ---
@@ -24,76 +24,53 @@ data:
     <div class="column is-four-fifths">
         <h2>Abstract</h2>
         <div class="content has-text-justified">
-The "computable" numbers may be described briefly as the real
-numbers whose expressions as a decimal are calculable by finite means.
-Although the subject of this paper is ostensibly the computable numbers.
-it is almost equally easy to define and investigate computable functions
-of an integral variable or a real or computable variable, computable
-predicates, and so forth. The fundamental problems involved are,
-however, the same in each case, and I have chosen the computable numbers
-for explicit treatment as involving the least cumbrous technique. I hope
-shortly to give an account of the relations of the computable numbers,
-functions, and so forth to one another. This will include a development
-of the theory of functions of a real variable expressed in terms of computable
-numbers. According to my definition, a number is computable
-if its decimal can be written down by a machine...
+        
+Large language models (LLMs) have emerged as a prominent tool for different areas , given their proficiency in handling and reasoning with unstructured data, including image, text and numbers. This project seeks to apply LLMs to the real estate data by introducing a novel interpretable and predictable price estimatation and recommandation system based on LLMs. with its capability of processing multimodal input data, LLM facilitates the interpretation of unstructured data in different formats, and effectively reasoning and extracting usefull data for further recommandation. 
+These estimation and recommandation capabilities are achieved through the utilization of dataset from Immowelt and ImmoScout24 through targetted finetuning strategy. The fine-tuning of domain-specific data enables LLM to yield accurate results in terms of real estate property estimation and further investment recommandation.
         </div>
     </div>
 </div>
 
 ---
 
-## Background
-The paper "On Computable Numbers, with an Application to the Entscheidungsproblem" was published by Alan Turing in 1936. In this groundbreaking paper, Turing introduced the concept of a universal computing machine, now known as the Turing machine.
 
 ## Objective
-Turing's main objective in this paper was to investigate the notion of computability and its relation to the Entscheidungsproblem (the decision problem), which is concerned with determining whether a given mathematical statement is provable or not.
-
+Estimating real estate prices involves analyzing various factors that influence the value of a property. This RealEstateGPT will provice a comprehensive guide to estimating real estate price by including location, perperty characteristics, market conditions and comparable sale data.
 
 ## Key Ideas
-1. Turing first presented the concept of a "computable number," which refers to a number that can be computed by an algorithm or a definite step-by-step process.
-2. He introduced the notion of a Turing machine, an abstract computational device consisting of an infinite tape divided into cells and a read-write head. The machine can read and write symbols on the tape, move the head left or right, and transition between states based on a set of rules.
-3. Turing demonstrated that the set of computable numbers is enumerable, meaning it can be listed in a systematic way, even though it is not necessarily countable.
-4. He proved the existence of non-computable numbers, which cannot be computed by any Turing machine.
-5. Turing showed that the Entscheidungsproblem is undecidable, meaning there is no algorithm that can determine, for any given mathematical statement, whether it is provable or not.
+The key idea behind a RealEstateGPT is to leverage advanced language models to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:
 
-![Turing Machine](/static/image/Turing_machine.png)
+1. Market Analysis and Insights
+Trend Analysis: Identify and analyze market trends based on vast amounts of data from multiple sources, including historical prices, sales data, and economic indicators.
+Neighborhood Analysis: Provide detailed insights into neighborhood characteristics, including amenities, crime rates, school ratings, and demographic information.
+2. Property Valuation
+Automated Valuation Models (AVMs): Generate accurate property value estimates by analyzing comparable sales, market conditions, and property attributes.
+Price Predictions: Predict future property values based on market trends, economic forecasts, and other influencing factors.
+3. Customer Assistance
+Virtual Assistance: Offer potential buyers and renters a virtual assistant to answer questions, provide property recommendations, and schedule viewings.
+Personalized Recommendations: Suggest properties to buyers and investors based on their preferences, budget, and investment goals.
+4. Investment Analysis
+ROI Calculations: Provide detailed return on investment (ROI) analyses for potential investment properties.
+Risk Assessment: Evaluate and highlight potential risks associated with real estate investments, including market volatility and property-specific issues.
 
-*Figure 1: A representation of a Turing Machine. Source: [Wiki](https://en.wikipedia.org/wiki/Turing_machine).*
 
-## Table: Comparison of Computable and Non-Computable Numbers
-
-| Computable Numbers | Non-Computable Numbers |
-|-------------------|-----------------------|
-| Rational numbers, e.g., 1/2, 3/4 | Transcendental numbers, e.g., π, e |
-| Algebraic numbers, e.g., √2, ∛3 | Non-algebraic numbers, e.g., √2 + √3 |
-| Numbers with finite decimal representations | Numbers with infinite, non-repeating decimal representations |
-
-He used the concept of a universal Turing machine to prove that the set of computable functions is recursively enumerable, meaning it can be listed by an algorithm.
-
-## Significance
-Turing's paper laid the foundation for the theory of computation and had a profound impact on the development of computer science. The Turing machine became a fundamental concept in theoretical computer science, serving as a theoretical model for studying the limits and capabilities of computation. Turing's work also influenced the development of programming languages, algorithms, and the design of modern computers.
+## technical steps
+1. Data collection: collect public and commercial real estate data by API and scraping
+2. Customization: Tailor the large language model to understand specific real estate terminology, regulations, and market conditions.
+3. User Interface Development: Develop user-friendly interfaces for real estate professionals and customers to interact with the AI.
 
 
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-        <h2>Demo Figures</h2>
+        <h2>Project Structure</h2>
+        <p align="center">
+        <img style="width: 49%" src="img/structure.png" />
+        </p>
     </div>
 </div>
-We provide some demos for DriveGPT4 generated conversations.
-
 
 ---
 ## Contact
 For any questions, please send email to neverset at aliyun dot com。
 
 ---
-## Citation
-```
-@article{xu2023drivegpt4,
-  title={DriveGPT4: Interpretable End-to-end Autonomous Driving via Large Language Model},
-  author={Xu, Zhenhua and Zhang, Yujia and Xie, Enze and Zhao, Zhen and Guo, Yong and Wong, Kenneth KY and Li, Zhenguo and Zhao, Hengshuang},
-  journal={arXiv preprint arXiv:2310.01412},
-  year={2023}
-}
-```

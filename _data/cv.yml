@@ -2,8 +2,10 @@
   type: map
   contents:
     - name: Full Name
-      value: WY Wang
+      value: YW Wang
     - name: Languages
       value: English, German
+    - name: Sport
+      value: Badminton, Table Tennis, shooting
 
 
