@@ -20,7 +20,7 @@ data:
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <p align="center">
-            <img style="width: 100%" src="img/title.png" />
+            <img style="width: 100%" src="img/title.jpg" />
         </p>
     </div>
 </div>
@@ -60,17 +60,18 @@ Estimating real estate prices involves analyzing various factors that influence 
 <p>Trend Analysis: Identify and analyze market trends based on vast amounts of data from multiple sources, including historical prices, sales data, and economic indicators.</p>
 <p>Neighborhood Analysis: Provide detailed insights into neighborhood characteristics, including amenities, crime rates, school ratings, and demographic information.</p>
 <p>2. Property Valuation</p>
-<p>Automated Valuation Models (AVMs): Generate accurate property value estimates by analyzing comparable sales, market conditions, and property attributes.<p>
+<p>Automated Valuation Models (AVMs): Generate accurate property value estimates by analyzing comparable sales, market conditions, and property attributes.</p>
 <p>Price Predictions: Predict future property values based on market trends, economic forecasts, and other influencing factors.</p>
 <p>3. Customer Assistance</p>
 <p>Virtual Assistance: Offer potential buyers and renters a virtual assistant to answer questions, provide property recommendations, and schedule viewings.</p>
 <p>Personalized Recommendations: Suggest properties to buyers and investors based on their preferences, budget, and investment goals.</p>
 <p>4. Investment Analysis</p>
-<p>ROI Calculations: Provide detailed return on investment (ROI) analyses for potential investment properties.
-Risk Assessment: Evaluate and highlight potential risks associated with real estate investments, including market volatility and property-specific issues.</p>
+<p>ROI Calculations: Provide detailed return on investment (ROI) analyses for potential investment properties.</p>
+<p>Risk Assessment: Evaluate and highlight potential risks associated with real estate investments, including market volatility and property-specific issues.</p>
         </div>
     </div>
 </div>
+
 ---
 
 <div class="columns is-centered has-text-centered">
