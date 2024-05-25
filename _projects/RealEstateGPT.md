@@ -33,11 +33,21 @@ These estimation and recommandation capabilities are achieved through the utiliz
 
 ---
 
-
-## Objective
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Objective</h2>
+        <div class="content has-text-justified">
 Estimating real estate prices involves analyzing various factors that influence the value of a property. This RealEstateGPT will provice a comprehensive guide to estimating real estate price by including location, perperty characteristics, market conditions and comparable sale data.
+        </div>
+    </div>
+</div>
 
-## Key Ideas
+---
+
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Key Ideas</h2>
+        <div class="content has-text-justified">
 The key idea behind a RealEstateGPT is to leverage advanced language models to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:
 
 1. Market Analysis and Insights
@@ -52,25 +62,34 @@ Personalized Recommendations: Suggest properties to buyers and investors based o
 4. Investment Analysis
 ROI Calculations: Provide detailed return on investment (ROI) analyses for potential investment properties.
 Risk Assessment: Evaluate and highlight potential risks associated with real estate investments, including market volatility and property-specific issues.
-
-
-## technical steps
-1. Data collection: collect public and commercial real estate data by API and scraping
-2. Customization: Tailor the large language model to understand specific real estate terminology, regulations, and market conditions.
-3. User Interface Development: Develop user-friendly interfaces for real estate professionals and customers to interact with the AI.
-
+        </div>
+    </div>
+</div>
+---
 
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-        <h2>Project Structure</h2>
+        <h2>Technical Steps</h2>
         <p align="center">
-        <img style="width: 49%" src="img/structure.png" />
+            <img style="width: 100%" src="img/structure.png" />
         </p>
+        <div class="content has-text-justified">
+1. Data collection: collect public and commercial real estate data by API and scraping
+2. Customization: Tailor the large language model to understand specific real estate terminology, regulations, and market conditions.
+3. User Interface Development: Develop user-friendly interfaces for real estate professionals and customers to interact with the AI.
+        </div>
     </div>
 </div>
 
 ---
-## Contact
+
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Contact</h2>
+        <div class="content has-text-justified">
 For any questions, please send email to neverset at aliyun dot com。
+        </div>
+    </div>
+</div>
 
 ---

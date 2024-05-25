@@ -41,9 +41,6 @@ These advanced capabilities are achieved through the utilization of a bespoke vi
 ---
 
 
-
-
-
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <h2>Demo Figures</h2>
