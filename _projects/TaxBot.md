@@ -2,8 +2,8 @@
 layout: project_page
 category: work
 
-projectname: RealEstateGPT
-title: Large Language Models for Investment Recommandation
+projectname: TaxBot
+title: TaxBot: Smart Tax Declaration Assistant
 author1: YW. Wang
 author1link: https://neverset123.github.io/
 author2: J. Jiao
@@ -12,7 +12,7 @@ affiliations:
 affiliations2:
     ByteDance Group
 Arxiv:
-video: https://youtu.be/_tLK0vW2Y78
+video: 
 code: 
 data: 
 ---
@@ -30,9 +30,8 @@ data:
     <div class="column is-four-fifths">
         <h2>Abstract</h2>
         <div class="content has-text-justified">
-        
-<p>Real estate investment has always been a dynamic field, influenced by property attributes, market trends, economic conditions, and investor sentiment. In recent years, large language models (LLMs) have emerged as powerful tools for analyzing and predicting various aspects of the real estate market. </p>
-<p> This project seeks to apply LLMs to the real estate data by introducing a novel interpretable and predictable price estimatation and recommandation system.  With its capability of processing multimodal input data(image, text and table), this smart agent RealEstateGPT will facilitate the interpretation of various data sources and data formats, and effectively generate useful market analysis, property valuation and customer assistance in real estate market.</p>
+<p>Large Language Models (LLMs) have been gaining attention in various fields, including legal analysis. </p>
+<p>This project seeks to apply LLMs to the real estate data by introducing a novel interpretable and predictable price estimatation and recommandation system.  With its capability of processing multimodal input data(image, text and table), this smart agent RealEstateGPT will facilitate the interpretation of various data sources and data formats, and effectively generate useful market analysis, property valuation and customer assistance in real estate market.</p>
 <p>These analysis and recommandation capabilities of RealEstateGPT are achieved through targetted LLMs finetuning with domain-specific dataset and real time market information. User could not only get specific market object report, but also interactivly ask the agent for further investment recommandation in terms of real estate property.</p>
         </div>
     </div>
