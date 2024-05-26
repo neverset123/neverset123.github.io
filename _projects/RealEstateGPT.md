@@ -12,7 +12,7 @@ affiliations:
 affiliations2:
     ByteDance Group
 Arxiv:
-video: 
+video: https://youtu.be/_tLK0vW2Y78
 code: 
 data: 
 ---
@@ -55,7 +55,7 @@ data:
     <div class="column is-four-fifths">
         <h2>Objective</h2>
         <div class="content has-text-justified">
-Estimating real estate prices involves analyzing various factors that influence the value of a property. This RealEstateGPT will provice a comprehensive guide to estimating real estate property value by including location, perperty characteristics, market conditions and comparable sale data.
+Estimating real estate prices involves analyzing various factors that influence the value of a property. This RealEstateGPT will provide a comprehensive guide to estimating real estate property value by including location, perperty characteristics, market conditions and comparable sale data.
         </div>
     </div>
 </div>
@@ -93,11 +93,20 @@ Estimating real estate prices involves analyzing various factors that influence 
             <img style="width: 100%" src="img/structure.png" />
         </p>
         <div class="content has-text-justified">
-<p>1. Data Preprocessing:clean and preprocess input unstructured data with cognitive recognization model to extract meaningful information</p>
+<p>1. Data Preprocessing: clean and preprocess input unstructured data with cognitive recognization model to extract meaningful information</p>
 <p>2. Embedding: extracted data in different format are converted to unified embeddings with fine-tuned LLM</p>
 <p>3. ML Prediction: vector embeddings are fed into trained ML model to get the predictions </p>
 <p>4. User Interaction: users are allowed to input natural language queries or commands, which the LLM then processes to interact with the embeddings.</p>
         </div>
+    </div>
+</div>
+
+---
+
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Demo Video</h2>
+        <p align="center"><iframe width="800" height="450" src="https://www.youtube.com/embed/_tLK0vW2Y78?si=JFRXep9HFeF-ttik" frameborder="0" allowfullscreen></iframe></p>
     </div>
 </div>
 
