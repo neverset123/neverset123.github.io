@@ -3,7 +3,7 @@ layout: project_page
 category: work
 
 projectname: TaxBot
-title: TaxBot: Smart Tax Declaration Assistant
+title: Smart Tax Declaration Assistant
 author1: YW. Wang
 author1link: https://neverset123.github.io/
 author2: J. Jiao
