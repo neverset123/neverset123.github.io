@@ -3,6 +3,9 @@
 <div class="row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
+      {% if entry.img %}
+        <img class="img-fluid z-depth-2 rounded" style="object-fit: contain" src="{{ entry.img }}">
+      {% endif %}
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
@@ -147,9 +150,6 @@
     {% endif %}
     {% if entry.month %}
       {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
-    {% endif %}
-    {% if entry.img %}
-      <img class="img-fluid z-depth-2 rounded" style="object-fit: contain" src="{{ entry.img }}">
     {% endif %}
     {% if entry.year %}
       {% capture entryyear %}{{ " " }}{{entry.year}}{% endcapture %}
