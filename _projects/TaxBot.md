@@ -30,9 +30,9 @@ data:
     <div class="column is-four-fifths">
         <h2>Abstract</h2>
         <div class="content has-text-justified">
-<p>Large Language Models (LLMs) have been gaining attention in various fields, including legal analysis. </p>
-<p>This project seeks to apply LLMs to the real estate data by introducing a novel interpretable and predictable price estimatation and recommandation system.  With its capability of processing multimodal input data(image, text and table), this smart agent RealEstateGPT will facilitate the interpretation of various data sources and data formats, and effectively generate useful market analysis, property valuation and customer assistance in real estate market.</p>
-<p>These analysis and recommandation capabilities of RealEstateGPT are achieved through targetted LLMs finetuning with domain-specific dataset and real time market information. User could not only get specific market object report, but also interactivly ask the agent for further investment recommandation in terms of real estate property.</p>
+<p>In recent years, the integration of artificial intelligence in financial services has led to the emergence of advanced tax advisory systems </p>
+<p>This project seeks to develop a Tax Advisory Chatbot leveraging Large Language Models (LLMs).  The chatbot is designed to assist individuals and businesses in navigating complex tax regulations, providing real-time, accurate, and personalized tax advice.</p>
+<p>The effectiveness of the chatbot is achieved through finetuned LLM's contextual understanding of natural language and vector-based search techniques. Extensive tax laws, regulations, and case precedents, ensuring comprehensive coverage and up-to-date information are incorporated in the system.</p>
         </div>
     </div>
 </div>
@@ -43,7 +43,7 @@ data:
     <div class="column is-four-fifths">
         <h2>Business Model</h2>
         <div class="content has-text-justified">
-        The RealEstateGPT will be provided as SaaS(Software as s Service), which allows users to utilize the power of LLMs without having to train the models themselves. Users pay a fee based on the amount of usage or a monthlich subscription fee without usage amount limitation. 
+This smart agent holds the potential to democratize access to tax expertise, particularly for small businesses and individual taxpayers who may lack resources for professional advisory services. It will be provided as Pay-as-you-Go mode, which allows users to utilize the power of LLMs by paying a fix amount of fee for each tax declaration. 
         </div>
     </div>
 </div>
@@ -54,7 +54,7 @@ data:
     <div class="column is-four-fifths">
         <h2>Objective</h2>
         <div class="content has-text-justified">
-Estimating real estate prices involves analyzing various factors that influence the value of a property. This RealEstateGPT will provide a comprehensive guide to estimating real estate property value by including location, perperty characteristics, market conditions and comparable sale data.
+This LLM-powered tax advisory chatbot not only enhances accessibility to tax advice but also significantly reduces the time and costs associated with traditional tax consultancy services. 
         </div>
     </div>
 </div>
@@ -65,20 +65,18 @@ Estimating real estate prices involves analyzing various factors that influence 
     <div class="column is-four-fifths">
         <h2>Key Ideas</h2>
         <div class="content has-text-justified">
-<p>The key idea behind a RealEstateGPT is to leverage advanced LLMs to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:</p>
+<p>The key idea behind the TaxBot is its contextual understanding and capabilities to handle complex tax scenarios and multilingual support. Key usage ideas for this Tax Advisory Chatbot are:</p>
 
-<p>1. Market Analysis and Insights</p>
-<p>Trend Analysis: Identify and analyze market trends based on vast amounts of data from multiple sources, including historical prices, sales data, and economic indicators.</p>
-<p>Neighborhood Analysis: Provide detailed insights into neighborhood characteristics, including amenities, crime rates, school ratings, and demographic information.</p>
-<p>2. Property Valuation</p>
-<p>Automated Valuation Models (AVMs): Generate accurate property value estimates by analyzing comparable sales, market conditions, and property attributes.</p>
-<p>Price Predictions: Predict future property values based on market trends, economic forecasts, and other influencing factors.</p>
-<p>3. Customer Assistance</p>
-<p>Virtual Assistance: Offer potential buyers and renters a virtual assistant to answer questions, provide property recommendations, and schedule viewings.</p>
-<p>Personalized Recommendations: Suggest properties to buyers and investors based on their preferences, budget, and investment goals.</p>
-<p>4. Investment Analysis</p>
-<p>ROI Calculations: Provide detailed return on investment (ROI) analyses for potential investment properties.</p>
-<p>Risk Assessment: Evaluate and highlight potential risks associated with real estate investments, including market volatility and property-specific issues.</p>
+<p>1. Personalized Tax Guidance</p>
+<p>The chatbot can provide tailored tax advice based on individual or business-specific financial situations, taking into account factors such as income, expenses, deductions, and credits to optimize tax outcomes.</p>
+<p>2. Real-Time Tax Queries</p>
+<p>Users can ask the chatbot tax-related questions at any time, receiving immediate and accurate responses. This can be particularly useful during tax season when timely information is critical.</p>
+<p>3. Filing Assistance</p>
+<p>The chatbot can guide users through the tax filing process, step-by-step, ensuring that all necessary forms are completed correctly and all potential deductions and credits are claimed.</p>
+<p>4. Regulation Updates</p>
+<p>The chatbot can keep users informed about the latest changes in tax laws and regulations, helping them stay compliant and take advantage of new tax-saving opportunities.</p>
+<p>5. Audit Preparation</p>
+<p>In the event of a tax audit, the chatbot can help users prepare by explaining the process, advising on necessary documentation, and offering strategies to address potential auditor questions.</p>
         </div>
     </div>
 </div>
@@ -89,7 +87,7 @@ Estimating real estate prices involves analyzing various factors that influence 
     <div class="column is-four-fifths">
         <h2>Technical Architecture</h2>
         <p align="center">
-            <img style="width: 100%" src="img/structure.png" />
+            <!-- <img style="width: 100%" src="img/structure.png" /> -->
         </p>
         <div class="content has-text-justified">
 <p>1. Data Preprocessing: clean and preprocess input unstructured data with cognitive recognization model to extract meaningful information</p>
