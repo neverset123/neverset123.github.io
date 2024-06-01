@@ -80,6 +80,8 @@ Estimating real estate prices involves analyzing various factors that influence 
 <p>4. Investment Analysis</p>
 <p>ROI Calculations: Provide detailed return on investment (ROI) analyses for potential investment properties.</p>
 <p>Risk Assessment: Evaluate and highlight potential risks associated with real estate investments, including market volatility and property-specific issues.</p>
+<p>5. Feng Shui Assessment</p>
+<p>Investment Strategy with Feng Shui: By considering both the physical and energetic aspects of a property, Feng Shui provides a comprehensive framework for creating harmonious, thriving living spaces.</p>
         </div>
     </div>
 </div>
