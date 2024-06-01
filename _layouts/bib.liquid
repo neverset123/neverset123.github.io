@@ -4,7 +4,7 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {% if entry.img %}
-        <img class="img-fluid z-depth-2 rounded" style="object-fit: contain" src="{{ entry.img }}">
+        <img class="img-fluid z-depth-2 rounded" style="object-fit: contain" src="{{ entry.img }}" width="80%" height="80%">
       {% endif %}
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}

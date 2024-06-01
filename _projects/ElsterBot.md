@@ -2,8 +2,8 @@
 layout: project_page
 category: work
 
-projectname: TaxBot
-title: Smart Tax Declaration Assistant
+projectname: ElsterBot
+title: Smart Tax Filing Assistant
 author1: YW. Wang
 author1link: https://neverset123.github.io/
 author2: J. Jiao
@@ -43,7 +43,7 @@ data:
     <div class="column is-four-fifths">
         <h2>Business Model</h2>
         <div class="content has-text-justified">
-This smart agent holds the potential to democratize access to tax expertise, particularly for small businesses and individual taxpayers who may lack resources for professional advisory services. It will be provided as Pay-as-you-Go mode, which allows users to utilize the power of LLMs by paying a fix amount of fee for each tax declaration. 
+This smart agent holds the potential to democratize access to tax expertise, particularly for small businesses and individual taxpayers who may lack resources for professional advisory services. It will be provided as Pay-as-you-Go mode, which allows users to utilize the power of LLMs by paying a fix amount of fee for each tax filing. 
         </div>
     </div>
 </div>
@@ -54,7 +54,8 @@ This smart agent holds the potential to democratize access to tax expertise, par
     <div class="column is-four-fifths">
         <h2>Objective</h2>
         <div class="content has-text-justified">
-This LLM-powered tax advisory chatbot not only enhances accessibility to tax advice but also significantly reduces the time and costs associated with traditional tax consultancy services. 
+This LLM-powered tax advisory chatbot aims to provide top-notch guidance for all tax needs with AI-driven solutions including tax advisory service and tax filing service, which significantly reduces the time and costs associated with traditional tax consultancy services. 
+what makes it stand out is its ability to provide personalized tax advice and unique expertise tailored for small businesses.
         </div>
     </div>
 </div>
@@ -65,7 +66,7 @@ This LLM-powered tax advisory chatbot not only enhances accessibility to tax adv
     <div class="column is-four-fifths">
         <h2>Key Ideas</h2>
         <div class="content has-text-justified">
-<p>The key idea behind the TaxBot is its contextual understanding and capabilities to handle complex tax scenarios and multilingual support. Key usage ideas for this Tax Advisory Chatbot are:</p>
+<p>The key idea behind the ElsterBot is its contextual understanding and capabilities to handle complex tax scenarios and multilingual support. Key usage ideas for this Tax Advisory Chatbot are:</p>
 
 <p>1. Personalized Tax Guidance</p>
 <p>The chatbot can provide tailored tax advice based on individual or business-specific financial situations, taking into account factors such as income, expenses, deductions, and credits to optimize tax outcomes.</p>
