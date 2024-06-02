@@ -2,7 +2,7 @@
 layout: project_page
 category: work
 
-projectname: ElsterBot
+projectname: ElsterGPT
 title: Smart Tax Assistant
 author1: YW. Wang
 author1link: https://neverset123.github.io/
