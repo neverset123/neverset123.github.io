@@ -3,7 +3,7 @@ layout: project_page
 category: work
 
 projectname: ElsterBot
-title: Smart Tax Filing Assistant
+title: Smart Tax Assistant
 author1: YW. Wang
 author1link: https://neverset123.github.io/
 author2: J. Jiao
