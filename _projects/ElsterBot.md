@@ -88,13 +88,13 @@ what makes it stand out is its ability to provide personalized tax advice and un
     <div class="column is-four-fifths">
         <h2>Technical Architecture</h2>
         <p align="center">
-            <!-- <img style="width: 100%" src="img/structure.png" /> -->
+            <img style="width: 100%" src="img/structure.png" />
         </p>
         <div class="content has-text-justified">
-<p>1. Data Preprocessing: clean and preprocess input unstructured data with cognitive recognization model to extract meaningful information</p>
-<p>2. Embedding: extracted data in different format are converted to unified embeddings with fine-tuned LLM</p>
-<p>3. ML Prediction: vector embeddings are fed into trained ML model to get the predictions </p>
-<p>4. User Interaction: users are allowed to input natural language queries or commands, which the LLM then processes to interact with the embeddings.</p>
+<p>1. Tax Regulation Data Ingestion: clean and preprocess tax regulation data with fine tuned LLM model and store final embeddings in vector database</p>
+<p>2. Tax Query Embedding: Extract and convert german ELSTER query with specific LLM model</p>
+<p>3. Query Augmentation: Retrive additional context from vector database and combined with original query for users</p>
+<p>4. User Interaction: users are able to select best-fit tax response , which will be further optimized with LLM for tax submission.</p>
         </div>
     </div>
 </div>
