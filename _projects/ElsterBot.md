@@ -31,7 +31,7 @@ data:
         <h2>Abstract</h2>
         <div class="content has-text-justified">
 <p>In recent years, the integration of artificial intelligence in financial services has led to the emergence of advanced tax advisory systems </p>
-<p>This project seeks to develop a Tax Advisory Chatbot leveraging Large Language Models (LLMs).  The chatbot is designed to assist individuals and businesses in navigating complex tax regulations, providing real-time, accurate, and personalized tax advice.</p>
+<p>This project seeks to develop a Tax Advisory Chatbot leveraging Large Language Models (LLMs) for maximal tax return.  The chatbot is designed to assist individuals and businesses in navigating complex tax regulations, providing real-time, accurate, and personalized tax advice.</p>
 <p>The effectiveness of the chatbot is achieved through finetuned LLM's contextual understanding of natural language and vector-based search techniques. Extensive tax laws, regulations, and case precedents, ensuring comprehensive coverage and up-to-date information are incorporated in the system.</p>
         </div>
     </div>
