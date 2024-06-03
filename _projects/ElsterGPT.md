@@ -12,7 +12,7 @@ affiliations:
 affiliations2:
     ByteDance Group
 Arxiv:
-video: 
+video: https://youtu.be/BDL1-hkBrJE
 code: 
 data: 
 ---
@@ -104,7 +104,7 @@ what makes it stand out is its ability to provide personalized tax advice and un
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <h2>Demo Video</h2>
-        <p align="center"><iframe width="800" height="450" src="https://www.youtube.com/embed/_tLK0vW2Y78?si=JFRXep9HFeF-ttik" frameborder="0" allowfullscreen></iframe></p>
+        <p align="center"><iframe width="800" height="450" src="https://www.youtube.com/embed/BDL1-hkBrJE?si=WUqEI6linOB4R5WT" frameborder="0" allowfullscreen></iframe></p>
     </div>
 </div>
 
