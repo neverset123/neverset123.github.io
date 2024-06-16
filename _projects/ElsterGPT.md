@@ -75,6 +75,7 @@ This smart agent holds the potential to democratize access to tax expertise, par
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <h2>Technical Architecture</h2>
+        <br><br>
         <p align="center">
             <img style="width: 100%" src="img/structure.png" />
         </p>
