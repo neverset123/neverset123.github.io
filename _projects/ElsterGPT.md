@@ -28,11 +28,11 @@ data:
 <!-- Using HTML to center the abstract -->
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-        <h2>Abstract</h2>
+        <h2>Vision</h2>
         <div class="content has-text-justified">
-<p>In recent years, the integration of artificial intelligence in financial services has led to the emergence of advanced tax advisory systems. </p>
-<p>This project seeks to develop a Tax Advisory Agent(ElsterGPT) leveraging Large Language Models (LLMs) for maximizing tax return.  The agent is designed to assist individuals and businesses in navigating complex tax regulations, providing real-time, accurate, and personalized tax advice.</p>
-<p>The effectiveness of the agent is achieved through fine-tuned LLM's contextual natural language processing capabilities and accurate retrival of relevant tax laws from vector database. By incorperating extensive tax laws, regulations, and case precedents in Machine Learning(ML) model during drafting and reviewing tax documents a higher-quality of decision-making will be significantly enhanced.</p>
+<p>Our mission is to revolutionize the landscape of tax compliance and optimization through cutting-edge artificial intelligence.</p>
+<p>Our tax advisory agent, ElsterGPT, aims to empower individuals and businesses with strategic solutions to navigate complex tax regulations efficiently and ethicallym by leveraging Large Language Models (LLMs) for maximizing tax refund.</p>
+<p>The effectiveness of the agent is achieved through a combination of fine-tuned LLM's contextual natural language processing capabilities and accurate retrival of relevant tax laws from vector database. By incorperating extensive tax laws, regulations, and case precedents in Machine Learning(ML) model during drafting and reviewing tax documents a higher-quality of decision-making is significantly enhanced.</p>
         </div>
     </div>
 </div>
@@ -43,7 +43,7 @@ data:
     <div class="column is-four-fifths">
         <h2>Business Model</h2>
         <div class="content has-text-justified">
-This smart agent holds the potential to democratize access to tax expertise, particularly for small businesses and individual taxpayers who may lack resources for professional advisory services. It will be provided as Pay-as-you-Go mode, which allows users to utilize the power of LLMs by paying a fix amount of fee for each tax filing. 
+This smart agent holds the potential to democratize access to tax expertise, particularly for small businesses and individual taxpayers who may lack resources for professional advisory services. It will be provided as <strong>Pay-as-you-Go</strong> mode, which allows users to utilize the power of LLMs by paying a fix amount of fee for each tax filing. 
         </div>
     </div>
 </div>
@@ -52,22 +52,10 @@ This smart agent holds the potential to democratize access to tax expertise, par
 
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-        <h2>Objective</h2>
+        <h2>Branding Points</h2>
         <div class="content has-text-justified">
-<p>This LLM-powered Tax Advisory Agent aims to provide top-notch guidance for all tax needs with AI-driven solutions including tax advisory service and tax filing service, which significantly reduces the time and costs associated with traditional tax consultancy services. </p>
-<p>What makes it stand out is its ability to provide personalized tax advice and unique expertise tailored for small businesses with accuracy.</p>
-        </div>
-    </div>
-</div>
-
----
-
-<div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
-        <h2>Key Ideas</h2>
-        <div class="content has-text-justified">
-<p>The key idea behind the ElsterGPT is its contextual understanding and capabilities to handle complex tax scenarios and multilingual support. Key usage ideas for this Tax Advisory Agent are:</p>
-
+<p>This LLM-powered tax advisory agent positions itself as a leader in the industry by providing top-notch guidance for all tax needs with AI-driven solutions including tax advisory service and tax filing service, which significantly reduces the time and costs associated with traditional tax consultancy services. </p>
+<p>What makes it stand out is its ability to provide personalized tax advice and unique expertise tailored for small businesses with accuracy. Key usage ideas for this Tax Advisory Agent are:</p>
 <p>1. Personalized Tax Guidance</p>
 <p>The agent can provide tailored tax advice based on individual or business-specific financial situations, taking into account factors such as income, expenses, deductions, and credits to optimize tax outcomes.</p>
 <p>2. Real-Time Tax Queries</p>
@@ -87,6 +75,7 @@ This smart agent holds the potential to democratize access to tax expertise, par
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <h2>Technical Architecture</h2>
+        <br><br>
         <p align="center">
             <img style="width: 100%" src="img/structure.png" />
         </p>
