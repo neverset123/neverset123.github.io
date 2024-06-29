@@ -15,7 +15,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hello, this is YW Wang. Currently I work as a staff developer for Mercedes Benz focusing on generative AI.
+Hello, this is YW Wang. Currently I work as a staff developer for Mercedes Benz focusing on generative AI Instruction tuning and multimodal LLMs for visually situated reasoning.
 
 Prior to joining MB, I have worked for tier 1 supplier Continental as Software Developer, and received my MSc. Degree from the Rheinisch-Westfälische Technische Hochschule Aachen (RWTH Aachen). 
 
