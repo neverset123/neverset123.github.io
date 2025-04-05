@@ -12,7 +12,7 @@ affiliations:
 affiliations2:
     ByteDance Group
 Arxiv:
-video: https://youtu.be/_tLK0vW2Y78
+video: https://youtu.be/FF8IpzjEdq4
 code: 
 data: 
 ---
@@ -55,7 +55,7 @@ data:
     <div class="column is-four-fifths">
         <h2>Objective</h2>
         <div class="content has-text-justified">
-Estimating real estate prices involves analyzing various factors that influence the value of a property. This RealEstateGPT will provide a comprehensive guide to estimating real estate property value by including location, perperty characteristics, market conditions and comparable sale data.
+This RealEstateGPT will provide a comprehensive guide to estimating real estate property value by including location, perperty characteristics, market conditions and comparable sale data.
         </div>
     </div>
 </div>
@@ -110,7 +110,7 @@ Estimating real estate prices involves analyzing various factors that influence 
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <h2>Demo Video</h2>
-        <p align="center"><iframe width="800" height="450" src="https://www.youtube.com/embed/_tLK0vW2Y78?si=JFRXep9HFeF-ttik" frameborder="0" allowfullscreen></iframe></p>
+        <p align="center"><iframe width="800" height="450" src="https://youtu.be/FF8IpzjEdq4" frameborder="0" allowfullscreen></iframe></p>
     </div>
 </div>
 
@@ -120,7 +120,7 @@ Estimating real estate prices involves analyzing various factors that influence 
     <div class="column is-four-fifths">
         <h2>Contact</h2>
         <div class="content has-text-justified">
-For any questions, please send email to yuwei.wang at aibricks.tech。
+For any questions, please send email to yuwei.wang@aibricks.tech。
         </div>
     </div>
 </div>
