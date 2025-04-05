@@ -43,6 +43,9 @@ data:
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <h2>Business Model</h2>
+        <p align="center">
+            <img style="width: 100%" src="img/payment.png" />
+        </p>
         <div class="content has-text-justified">
         The RealEstateGPT will be provided as SaaS(Software as s Service), which allows users to utilize the power of LLMs without having to train the models themselves. Users pay a fee based on the amount of usage or a monthlich subscription fee without usage amount limitation. 
         </div>
@@ -66,24 +69,27 @@ This RealEstateGPT will provide a comprehensive guide to estimating real estate 
     <div class="column is-four-fifths">
         <h2>Key Ideas</h2>
         <div class="content has-text-justified">
-<p>The key idea behind a RealEstateGPT is to leverage advanced LLMs to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:</p>
+            <p align="center">
+                <img style="width: 100%" src="img/application.png" />
+            </p>   
+            <p>The key idea behind a RealEstateGPT is to leverage advanced LLMs to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:</p>
 
-<p>1. Recommendation Engine</p>
-<p>Personalize property suggestions by analyzing buyer preferences, needs, and market trends through natural language understanding and advanced data processing.</p>
-<p>2. Market Analysis and Insights</p>
-<p>Trend Analysis: Identify and analyze market trends based on vast amounts of data from multiple sources, including historical prices, sales data, and economic indicators.</p>
-<p>Neighborhood Analysis: Provide detailed insights into neighborhood characteristics, including amenities, crime rates, school ratings, and demographic information.</p>
-<p>3. Property Valuation</p>
-<p>Automated Valuation Models (AVMs): Generate accurate property value estimates by analyzing comparable sales, market conditions, and property attributes.</p>
-<p>Price Predictions: Predict future property values based on market trends, economic forecasts, and other influencing factors.</p>
-<p>4. Customer Assistance</p>
-<p>Virtual Assistance: Offer potential buyers and renters a virtual assistant to answer questions, provide property recommendations, and schedule viewings.</p>
-<p>Personalized Recommendations: Suggest properties to buyers and investors based on their preferences, budget, and investment goals.</p>
-<p>5. Investment Analysis</p>
-<p>ROI Calculations: Provide detailed return on investment (ROI) analyses for potential investment properties.</p>
-<p>Risk Assessment: Evaluate and highlight potential risks associated with real estate investments, including market volatility and property-specific issues.</p>
-<p>6. Feng Shui Assessment</p>
-<p>Investment Strategy with Feng Shui: By considering both the physical and energetic aspects of a property, Feng Shui provides a comprehensive framework for creating harmonious, thriving living spaces.</p>
+            <p>1. Recommendation Engine</p>
+            <p>Personalize property suggestions by analyzing buyer preferences, needs, and market trends through natural language understanding and advanced data processing.</p>
+            <p>2. Market Analysis and Insights</p>
+            <p>Trend Analysis: Identify and analyze market trends based on vast amounts of data from multiple sources, including historical prices, sales data, and economic indicators.</p>
+            <p>Neighborhood Analysis: Provide detailed insights into neighborhood characteristics, including amenities, crime rates, school ratings, and demographic information.</p>
+            <p>3. Property Valuation</p>
+            <p>Automated Valuation Models (AVMs): Generate accurate property value estimates by analyzing comparable sales, market conditions, and property attributes.</p>
+            <p>Price Predictions: Predict future property values based on market trends, economic forecasts, and other influencing factors.</p>
+            <p>4. Customer Assistance</p>
+            <p>Virtual Assistance: Offer potential buyers and renters a virtual assistant to answer questions, provide property recommendations, and schedule viewings.</p>
+            <p>Personalized Recommendations: Suggest properties to buyers and investors based on their preferences, budget, and investment goals.</p>
+            <p>5. Investment Analysis</p>
+            <p>ROI Calculations: Provide detailed return on investment (ROI) analyses for potential investment properties.</p>
+            <p>Risk Assessment: Evaluate and highlight potential risks associated with real estate investments, including market volatility and property-specific issues.</p>
+            <p>6. Feng Shui Assessment</p>
+            <p>Investment Strategy with Feng Shui: By considering both the physical and energetic aspects of a property, Feng Shui provides a comprehensive framework for creating harmonious, thriving living spaces.</p>
         </div>
     </div>
 </div>
@@ -94,7 +100,7 @@ This RealEstateGPT will provide a comprehensive guide to estimating real estate 
     <div class="column is-four-fifths">
         <h2>Technical Architecture</h2>
         <p align="center">
-            <img style="width: 100%" src="img/structure.png" />
+            <img style="width: 100%" src="img/architecture.png" />
         </p>
         <div class="content has-text-justified">
 <p>1. Data Preprocessing: clean and preprocess input unstructured data with cognitive recognization model to extract meaningful information</p>
