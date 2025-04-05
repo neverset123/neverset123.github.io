@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Digital Plus IT</a>
+subtitle: <a href='#'>Digital Plus (AIBRICKS)</a>
 
 profile:
   align: right
