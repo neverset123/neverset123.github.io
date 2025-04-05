@@ -110,7 +110,7 @@ This RealEstateGPT will provide a comprehensive guide to estimating real estate 
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <h2>Demo Video</h2>
-        <p align="center"><iframe width="800" height="450" src="https://youtu.be/FF8IpzjEdq4" frameborder="0" allowfullscreen></iframe></p>
+        <p align="center"><iframe width="800" height="450" src="https://youtu.be/FF8IpzjEdq4?si=0frMiF_E55k5T2aq" frameborder="0" allowfullscreen></iframe></p>
     </div>
 </div>
 
