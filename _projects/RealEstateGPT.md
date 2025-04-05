@@ -32,7 +32,7 @@ data:
         <div class="content has-text-justified">
         
 <p>Real estate investment has always been a dynamic field, influenced by property attributes, market trends, economic conditions, and investor sentiment. In recent years, large language models (LLMs) have emerged as powerful tools for analyzing and predicting various aspects of the real estate market. </p>
-<p> This project seeks to apply LLMs to the real estate data by introducing a novel interpretable and predictable price estimatation and recommandation system.  With its capability of processing multimodal input data(image, text and table), this smart agent RealEstateGPT will facilitate the interpretation of various data sources and data formats, and effectively generate useful market analysis, property valuation and customer assistance in real estate market.</p>
+<p> This agent seeks to apply LLMs to the real estate data by introducing a novel interpretable and predictable price estimatation and recommandation system.  With its capability of processing multimodal input data(image, text and table), this smart agent RealEstateGPT will facilitate the interpretation of various data sources and data formats, and effectively generate useful market analysis, property valuation and customer assistance in real estate market.</p>
 <p>These analysis and recommandation capabilities of RealEstateGPT are achieved through targetted LLMs finetuning with domain-specific dataset and real time market information. User could not only get specific market object report, but also interactivly ask the agent for further investment recommandation in terms of real estate property.</p>
         </div>
     </div>
@@ -47,7 +47,7 @@ data:
             <img style="width: 100%" src="img/payment.png" />
         </p>
         <div class="content has-text-justified">
-        The RealEstateGPT will be provided as SaaS(Software as s Service), which allows users to utilize the power of LLMs without having to train the models themselves. Users pay a fee based on the amount of usage or a monthlich subscription fee without usage amount limitation. 
+        The agent will be provided as SaaS(Software as s Service), which allows users to utilize the power of LLMs without having to train the models themselves. Users pay a fee based on the amount of usage or a monthlich subscription fee without usage amount limitation. 
         </div>
     </div>
 </div>
@@ -72,7 +72,7 @@ This RealEstateGPT will provide a comprehensive guide to estimating real estate 
             <p align="center">
                 <img style="width: 100%" src="img/application.png" />
             </p>   
-            <p>The key idea behind a RealEstateGPT is to leverage advanced LLMs to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:</p>
+            <p>The key idea behind RealEstateGPT is to leverage advanced LLMs to assist in various aspects of the real estate industry. This AI-powered tool could provide valuable insights, streamline processes, and enhance decision-making for real estate professionals, investors, and buyers. The core functionalities and benefits are:</p>
 
             <p>1. Recommendation Engine</p>
             <p>Personalize property suggestions by analyzing buyer preferences, needs, and market trends through natural language understanding and advanced data processing.</p>
@@ -117,6 +117,7 @@ This RealEstateGPT will provide a comprehensive guide to estimating real estate 
     <div class="column is-four-fifths">
         <h2>Demo Video</h2>
         <p align="center"><iframe width="800" height="450" src="https://www.youtube.com/embed/FF8IpzjEdq4?si=-z1v4rt_ix40dTk1" frameborder="0" allowfullscreen></iframe></p>
+        
     </div>
 </div>
 
