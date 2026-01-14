@@ -43,7 +43,7 @@ data:
     <div class="column is-four-fifths">
         <h2>Business Model</h2>
         <div class="content has-text-justified">
-This SaaS holds the potential to power enterprise to interact with users as early as possible with minimum costs. It will be provided as <strong>Subscription</strong> mode for APIs, SDKs, or on-device modules. 
+This SaaS powers enterprise to interact with users as early as possible with minimum costs. It will be provided as <strong>Subscription</strong> for APIs, SDKs, or on-device modules. 
         </div>
     </div>
 </div>
@@ -55,12 +55,12 @@ This SaaS holds the potential to power enterprise to interact with users as earl
         <h2>Branding Points</h2>
         <div class="content has-text-justified">
 <p>This SaaS focuses on natural, respectful replication that feels human, adaptive, and aligned with real behavioral nuance. </p>
-<p>What makes it stand out is its ability to provide personalized tax advice and unique expertise tailored for small businesses with accuracy. Key usage ideas for this SaaS are:</p>
+<p>Key usage ideas for this SaaS are:</p>
 <p>1. Personality-Aware Experimentation</p>
 <p>Run A/B tests not only on what content is shown, but how it is delivered—tailoring tone, timing, and interaction style to different personality profiles.</p>
 <p>2. Explainable Performance Differences</p>
 <p>Segmenting experiments by personality traits reduces noise in test results, leading to clearer insights and faster optimization cycles.</p>
-<p>3. Plug-and-Play with Existing A/B Tools</p>
+<p>3. Plug-and-Play</p>
 <p>By testing against known personality tendencies, teams avoid broad, unfocused experiments and reduce wasted traffic. Integrates with common experimentation and analytics platforms, extending existing A/B testing workflows rather than replacing them.</p>
         </div>
     </div>
@@ -76,10 +76,10 @@ This SaaS holds the potential to power enterprise to interact with users as earl
             <img style="width: 100%" src="img/profile_db.png" />
         </p>
         <div class="content has-text-justified">
-<p>1. User Data Layer: Stores relatively stable attributes of the user, forming the foundation of the profile..</p>
-<p>2. Item Data Layer: Represents the entities the user interacts with—such as products, content, UI variants, or messages.</p>
-<p>3. Context Data Layer: Adds situational awareness to each interaction.</p>
-<p>4. Interaction Data Layer: Captures how users engage with items over time.</p>
+<p>1. User Data Layer: attributes of the user, which is the foundation of the profile.</p>
+<p>2. Item Data Layer: entities the user interacts with.</p>
+<p>3. Context Data Layer: situational context to each interaction.</p>
+<p>4. Interaction Data Layer: users' interaction with items.</p>
         </div>
     </div>
 </div>
