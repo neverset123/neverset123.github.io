@@ -31,8 +31,8 @@ data:
         <h2>Vision</h2>
         <div class="content has-text-justified">
 <p>Our mission is to build intelligent systems that can accurately, ethically, and transparently replicate human personality traits from observable data—such as behavior, or multimodal signals—in order to enable more human-centered, adaptive, and empathetic technologies.</p>
-<p>Our solution leverages lightweight, on-device machine learning models to infer personality traits directly from user data in real time. By combining efficient feature extraction with optimized neural architectures, it enables privacy-preserving personality recognition and replication without cloud dependency</p>
-<p>Unlike conventional personality recognition systems that rely on cloud-based analytics and static user profiling, this solution performs real-time personality inference entirely on-device, combining privacy-by-design, adaptive learning, and explainable trait modeling.</p>
+<p>Our solution leverages lightweight, machine learning models to infer personality traits directly from user data in real time. By combining efficient feature extraction with optimized neural architectures, it enables privacy-preserving personality recognition and replication without cloud dependency</p>
+<p>Unlike conventional personality recognition systems that rely on static user profiling, this solution performs real-time personality inference on-device, combining privacy-by-design, adaptive learning, and explainable trait modeling.</p>
         </div>
     </div>
 </div>
@@ -88,8 +88,13 @@ This SaaS powers enterprise to interact with users as early as possible with min
 
 <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-        <h2>Demo Video</h2>
-        <p align="center"><iframe width="800" height="450" src="https://www.youtube.com/embed/BDL1-hkBrJE?si=WUqEI6linOB4R5WT" frameborder="0" allowfullscreen></iframe></p>
+        <h2>Demo</h2>
+        <p align="center">
+            <iframe width="100%" height="450" src="https://www.youtube.com/embed/j0LZKq6PQOA?si=mEMxNksO5xY14VCQ" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+        </p>
+        <p align="center" style="margin-top:24px;">
+            <iframe src="/projects/APR/static/html/demo.html" width="100%" height="560" style="border:none; border-radius:8px;" allowfullscreen></iframe>
+        </p>
     </div>
 </div>
 

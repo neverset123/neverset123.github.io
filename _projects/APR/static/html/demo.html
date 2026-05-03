@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ProfileAgent · Synthetic A/B Testing for Personalized Fashion Recommendation</title>
+<style>
+  /* ── Reset & base ─────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; font-family: 'Segoe UI', system-ui, sans-serif; background: #0b0d14; color: #eef0f6; }
+
+  /* ── Palette ──────────────────────────────────────────────── */
+  :root {
+    --navy:   #0b0d14;
+    --dark:   #131622;
+    --card:   #1a1e2e;
+    --border: #2a2f45;
+    --gold:   #c9a84c;
+    --gold2:  #f0cc6a;
+    --teal:   #38bdf8;
+    --green:  #4ade80;
+    --red:    #f87171;
+    --muted:  #8891b0;
+    --white:  #eef0f6;
+  }
+
+  /* ── Slide engine ─────────────────────────────────────────── */
+  .deck { width: 100vw; height: 100vh; position: relative; }
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 48px 64px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .4s ease;
+  }
+  .slide.active { opacity: 1; pointer-events: all; }
+
+  /* ── Navigation ──────────────────────────────────────────── */
+  .nav {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 10px; z-index: 100;
+  }
+  .nav .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--border); cursor: pointer; transition: background .3s;
+  }
+  .nav .dot.active { background: var(--gold); }
+  .arrow {
+    position: fixed; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,.06); border: 1px solid var(--border);
+    color: var(--muted); font-size: 22px; width: 44px; height: 44px;
+    border-radius: 50%; cursor: pointer; display: flex; align-items: center;
+    justify-content: center; transition: all .2s; z-index: 100;
+    user-select: none;
+  }
+  .arrow:hover { background: rgba(201,168,76,.15); color: var(--gold); border-color: var(--gold); }
+  #prev { left: 20px; }
+  #next { right: 20px; }
+  .slide-counter {
+    position: fixed; top: 22px; right: 32px;
+    font-size: 12px; color: var(--muted); letter-spacing: .08em; z-index: 100;
+  }
+
+  /* ── Typography helpers ──────────────────────────────────── */
+  .tag {
+    display: inline-block; padding: 4px 12px; border-radius: 20px;
+    font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+    background: rgba(201,168,76,.12); color: var(--gold); border: 1px solid rgba(201,168,76,.3);
+    margin-bottom: 20px;
+  }
+  h1 { font-size: clamp(32px, 4vw, 56px); font-weight: 700; line-height: 1.1; }
+  h2 { font-size: clamp(24px, 3vw, 38px); font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+  h3 { font-size: 18px; font-weight: 600; color: var(--gold2); margin-bottom: 6px; }
+  p  { font-size: 16px; line-height: 1.7; color: #b0b8d0; }
+  .accent { color: var(--gold2); }
+  .teal   { color: var(--teal); }
+  .green  { color: var(--green); }
+  .muted  { color: var(--muted); font-size: 13px; }
+
+  /* ── Layout helpers ──────────────────────────────────────── */
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; max-width: 1000px; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; width: 100%; max-width: 1000px; }
+  .center { text-align: center; }
+  .full { width: 100%; max-width: 1000px; }
+
+  /* ── Card ────────────────────────────────────────────────── */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px 32px;
+  }
+  .card.gold-border { border-color: rgba(201,168,76,.5); }
+  .card.teal-border { border-color: rgba(56,189,248,.4); }
+  .card.green-border { border-color: rgba(74,222,128,.4); }
+
+  /* ── Step / flow boxes ───────────────────────────────────── */
+  .step-row { display: flex; gap: 0; align-items: stretch; width: 100%; max-width: 1000px; }
+  .step {
+    flex: 1; background: var(--card); border: 1px solid var(--border);
+    padding: 22px 18px; text-align: center; position: relative;
+  }
+  .step:first-child { border-radius: 12px 0 0 12px; }
+  .step:last-child  { border-radius: 0 12px 12px 0; }
+  .step + .step { border-left: none; }
+  .step .num {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(201,168,76,.15); color: var(--gold);
+    font-weight: 700; font-size: 13px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 10px;
+  }
+  .step .arrow-r {
+    position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
+    color: var(--gold); font-size: 18px; z-index: 2;
+  }
+
+  /* ── Comparison table ────────────────────────────────────── */
+  .compare-table { width: 100%; max-width: 900px; border-collapse: collapse; font-size: 15px; }
+  .compare-table th {
+    padding: 14px 20px; background: var(--card);
+    border: 1px solid var(--border); font-weight: 600;
+  }
+  .compare-table td { padding: 13px 20px; border: 1px solid var(--border); }
+  .compare-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+  .compare-table .a-col { color: var(--red); }
+  .compare-table .b-col { color: var(--green); }
+  .th-a { background: rgba(248,113,113,.08) !important; color: var(--red) !important; }
+  .th-b { background: rgba(74,222,128,.08) !important; color: var(--green) !important; }
+
+  /* ── Metric bar ──────────────────────────────────────────── */
+  .metric-row { display: flex; align-items: center; gap: 14px; margin: 12px 0; }
+  .metric-label { width: 140px; font-size: 14px; color: var(--muted); flex-shrink: 0; }
+  .bar-wrap { flex: 1; background: var(--border); border-radius: 6px; height: 10px; overflow: hidden; }
+  .bar-fill  { height: 100%; border-radius: 6px; transition: width 1s ease; }
+  .bar-a { background: var(--red); }
+  .bar-b { background: var(--green); }
+  .metric-val { width: 36px; text-align: right; font-size: 14px; font-weight: 600; }
+
+  /* ── Results mockup table ────────────────────────────────── */
+  .results-tbl { width: 100%; font-size: 13px; border-collapse: collapse; }
+  .results-tbl th { background: var(--card); border: 1px solid var(--border); padding: 10px 14px; color: var(--muted); font-weight: 600; text-align: center; }
+  .results-tbl td { border: 1px solid var(--border); padding: 9px 14px; text-align: center; }
+  .results-tbl .grp-a { color: var(--red); font-weight: 600; }
+  .results-tbl .grp-b { color: var(--green); font-weight: 600; }
+  .results-tbl .lift  { color: var(--gold2); font-weight: 700; }
+  .results-tbl .sig   { color: var(--teal); }
+  .results-tbl tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+  /* ── Slide-specific backgrounds ─────────────────────────── */
+  #slide-1 { background: radial-gradient(ellipse at 70% 30%, rgba(201,168,76,.08) 0%, var(--navy) 65%); }
+  #slide-2 { background: radial-gradient(ellipse at 20% 70%, rgba(248,113,113,.07) 0%, var(--navy) 65%); }
+  #slide-3 { background: radial-gradient(ellipse at 80% 20%, rgba(56,189,248,.06) 0%, var(--navy) 65%); }
+  #slide-4 { background: var(--navy); }
+  #slide-5 { background: radial-gradient(ellipse at 50% 50%, rgba(26,30,46,.8) 0%, var(--navy) 100%); }
+  #slide-6 { background: var(--navy); }
+  #slide-7 { background: radial-gradient(ellipse at 30% 80%, rgba(74,222,128,.06) 0%, var(--navy) 65%); }
+  #slide-8 { background: var(--navy); }
+  #slide-9 { background: radial-gradient(ellipse at 70% 30%, rgba(201,168,76,.08) 0%, var(--navy) 65%); }
+
+  /* ── Icon circles ────────────────────────────────────────── */
+  .icon-circle {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 14px;
+  }
+  .icon-gold  { background: rgba(201,168,76,.15); }
+  .icon-teal  { background: rgba(56,189,248,.12); }
+  .icon-green { background: rgba(74,222,128,.12); }
+  .icon-red   { background: rgba(248,113,113,.12); }
+
+  /* ── Divider ──────────────────────────────────────────────── */
+  .divider { width: 60px; height: 3px; background: var(--gold); border-radius: 2px; margin: 16px 0; }
+  .center .divider { margin: 16px auto; }
+
+  /* ── Bullet list ──────────────────────────────────────────── */
+  .bullets { list-style: none; margin: 0; padding: 0; }
+  .bullets li {
+    padding: 10px 0 10px 26px; position: relative;
+    font-size: 15px; color: #b0b8d0; line-height: 1.5;
+    border-bottom: 1px solid rgba(255,255,255,.04);
+  }
+  .bullets li:last-child { border-bottom: none; }
+  .bullets li::before { content: "›"; position: absolute; left: 6px; color: var(--gold); font-weight: 700; }
+
+  /* ── Code block ──────────────────────────────────────────── */
+  .code-block {
+    background: #0d0f1a; border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px; font-family: 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 13px; line-height: 1.7; color: #9ba8c5; white-space: pre; overflow-x: auto;
+  }
+  .code-block .kw  { color: var(--teal); }
+  .code-block .fn  { color: var(--gold2); }
+  .code-block .cm  { color: #4a5260; }
+  .code-block .st  { color: #86efac; }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- ══ SLIDE 1 – Title ══════════════════════════════════════════════════ -->
+  <section class="slide active" id="slide-1">
+    <div style="max-width:820px; text-align:center;">
+      <div class="tag">ProfileAgent · A/B Testing</div>
+      <h1>Personalized Fashion<br>Recommendation at Scale</h1>
+      <div class="divider center"></div>
+      <p style="font-size:20px; margin-top:20px; max-width:620px; margin-left:auto; margin-right:auto;">
+        Using <span class="accent">synthetic ProfileAgent identities</span> as users,
+        evaluators, and ground truth — so A/B testing needs no real user traffic.
+      </p>
+      <div style="margin-top:48px; display:flex; gap:32px; justify-content:center; flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div style="font-size:32px; font-weight:700; color:var(--gold);">100</div>
+          <div class="muted">Synthetic users sampled</div>
+        </div>
+        <div style="width:1px; background:var(--border);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:32px; font-weight:700; color:var(--teal);">2</div>
+          <div class="muted">Recommender engines</div>
+        </div>
+        <div style="width:1px; background:var(--border);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:32px; font-weight:700; color:var(--green);">3</div>
+          <div class="muted">Evaluation dimensions</div>
+        </div>
+        <div style="width:1px; background:var(--border);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:32px; font-weight:700; color:var(--gold2);">0</div>
+          <div class="muted">Real users needed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 2 – Problem ════════════════════════════════════════════════ -->
+  <section class="slide" id="slide-2">
+    <div class="full">
+      <div class="tag">The Problem</div>
+      <h2>Why Generic Recommendations Fall Short</h2>
+      <div class="divider"></div>
+      <div class="cols2" style="margin-top:28px;">
+        <div>
+          <ul class="bullets">
+            <li>Most recommenders rely on <strong>domain or role keywords</strong> — a lawyer gets "formal attire" regardless of who they are as an individual.</li>
+            <li>A/B testing requires <strong>real user traffic</strong> and weeks of data collection before results are meaningful.</li>
+            <li>User self-reported feedback is <strong>noisy, sparse, and expensive</strong> to collect at scale.</li>
+            <li>There is no standard way to test personalization quality before deploying to real users — risk is high.</li>
+          </ul>
+        </div>
+        <div class="card" style="display:flex; flex-direction:column; gap:16px;">
+          <h3>Typical Baseline Output</h3>
+          <div style="background:#0d0f1a; border-radius:10px; padding:16px; font-size:13px; line-height:1.8; color:var(--muted);">
+            "Based on your profile as a <span style="color:var(--red);">legal advisor</span> in the <span style="color:var(--red);">Law &amp; Legal</span> domain,
+            we suggest a <span style="color:var(--red);">classic, formal, professional</span> wardrobe.
+            Recommended items: <em>Oxford shirt, Wool blazer, Oxford shoes…</em>"
+          </div>
+          <p style="font-size:13px; color:var(--red);">
+            ✗ &nbsp;Same output for 1,000 different lawyers.<br>
+            ✗ &nbsp;Ignores personality, lifestyle, location, values.<br>
+            ✗ &nbsp;No way to know if the user actually likes this.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 3 – Solution ═══════════════════════════════════════════════ -->
+  <section class="slide" id="slide-3">
+    <div class="full center">
+      <div class="tag">Our Solution</div>
+      <h2>ProfileAgent as Synthetic User Identity</h2>
+      <div class="divider center"></div>
+      <p style="max-width:700px; margin:0 auto 36px;">
+        Instead of waiting for real user feedback, we instantiate a
+        <span class="teal">ProfileAgent</span> for each persona —
+        it <em>becomes</em> that user, remembers their style values,
+        and judges recommendations <strong>in their own voice</strong>.
+      </p>
+      <div class="cols3">
+        <div class="card teal-border center">
+          <div class="icon-circle icon-teal" style="margin:0 auto 14px;">🧬</div>
+          <h3>Rich Identity</h3>
+          <p style="font-size:14px;">LLM infers first-person lifestyle statements from PersonaHub data and stores them as agent memories.</p>
+        </div>
+        <div class="card gold-border center">
+          <div class="icon-circle icon-gold" style="margin:0 auto 14px;">🎯</div>
+          <h3>Self-Evaluation</h3>
+          <p style="font-size:14px;">The agent evaluates any recommendation it receives using <code style="color:var(--gold2);">agent.reply()</code> — scoring from its own perspective.</p>
+        </div>
+        <div class="card green-border center">
+          <div class="icon-circle icon-green" style="margin:0 auto 14px;">⚡</div>
+          <h3>Zero Traffic Needed</h3>
+          <p style="font-size:14px;">Run statistically significant A/B tests before launch — no real users, no waiting, no risk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 4 – Pipeline ════════════════════════════════════════════════ -->
+  <section class="slide" id="slide-4">
+    <div class="full">
+      <div class="tag">How It Works</div>
+      <h2>Pipeline Architecture</h2>
+      <div class="divider"></div>
+      <div class="step-row" style="margin:32px 0 20px;">
+        <div class="step">
+          <div class="num">1</div>
+          <div style="font-size:22px; margin-bottom:8px;">📋</div>
+          <h3 style="font-size:14px;">Sample Users</h3>
+          <p style="font-size:12px;">100 personas drawn from PersonaHub CSV — diverse roles, domains, locations.</p>
+          <span class="arrow-r">›</span>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div style="font-size:22px; margin-bottom:8px;">🧬</div>
+          <h3 style="font-size:14px;">Build Agent</h3>
+          <p style="font-size:12px;">ProfileAgent created. LLM infers 4–5 first-person style memories. Agent <em>knows</em> itself.</p>
+          <span class="arrow-r">›</span>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div style="font-size:22px; margin-bottom:8px;">👗</div>
+          <h3 style="font-size:14px;">Recommend</h3>
+          <p style="font-size:12px;"><strong>Group A:</strong> keyword engine reads <code>agent.metadata</code>.<br><strong>Group B:</strong> LLM stylist reads metadata + memories.</p>
+          <span class="arrow-r">›</span>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <div style="font-size:22px; margin-bottom:8px;">💬</div>
+          <h3 style="font-size:14px;">Agent Judges</h3>
+          <p style="font-size:12px;">Agent calls <code>agent.reply()</code> to self-score the recommendation on 3 dimensions.</p>
+          <span class="arrow-r">›</span>
+        </div>
+        <div class="step">
+          <div class="num">5</div>
+          <div style="font-size:22px; margin-bottom:8px;">📊</div>
+          <h3 style="font-size:14px;">Report</h3>
+          <p style="font-size:12px;">Welch t-test, Cohen's d, per-agent table, group lift — statistically rigorous output.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:12px; padding:16px 24px;">
+        <p style="font-size:13px; text-align:center; color:var(--muted);">
+          Every agent is both the <span class="accent">recipient</span> of the recommendation <em>and</em> the <span class="accent">evaluator</span> — grounding quality measurement in the user's actual identity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 5 – The Two Engines ════════════════════════════════════════ -->
+  <section class="slide" id="slide-5">
+    <div class="full">
+      <div class="tag">Recommender Engines</div>
+      <h2>Group A vs Group B</h2>
+      <div class="divider"></div>
+      <div class="cols2" style="margin-top:28px; align-items:start;">
+        <div class="card" style="border-color:rgba(248,113,113,.4);">
+          <h3 style="color:var(--red);">Group A — Baseline</h3>
+          <p class="muted" style="margin-bottom:14px;">Rule-based keyword engine &nbsp;·&nbsp; <code>baseline_recommend(agent)</code></p>
+          <ul class="bullets">
+            <li>Reads <code>agent.metadata</code>: role, domain, traits</li>
+            <li>Maps domain → style buckets (e.g. "legal" → professional/formal)</li>
+            <li>Scores catalogue by keyword overlap</li>
+            <li><strong>Zero LLM calls</strong> — pure heuristic</li>
+            <li>Equivalent to a production system with no personalization</li>
+          </ul>
+        </div>
+        <div class="card" style="border-color:rgba(74,222,128,.4);">
+          <h3 style="color:var(--green);">Group B — Advanced</h3>
+          <p class="muted" style="margin-bottom:14px;">External LLM stylist &nbsp;·&nbsp; <code>advanced_recommend(agent)</code></p>
+          <ul class="bullets">
+            <li>Reads <code>agent.metadata</code> <em>and</em> recalled memory lines</li>
+            <li>Passes full context to LLM as stylist prompt via <code>chat()</code></li>
+            <li>LLM reasons about agent's lifestyle and values per item</li>
+            <li><strong>Does NOT call <code>agent.reply()</code></strong> — external system perspective</li>
+            <li>Represents a semantically-aware recommendation engine</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top:20px; padding:14px 24px;">
+        <p style="text-align:center; font-size:14px; color:var(--muted);">
+          Both groups share the <strong>same evaluation step</strong> — the agent's own <code>agent.reply()</code> self-score — ensuring a fair comparison.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 6 – ProfileAgent as Judge ══════════════════════════════════ -->
+  <section class="slide" id="slide-6">
+    <div class="full">
+      <div class="tag">Key Innovation</div>
+      <h2>ProfileAgent as the Ground-Truth Evaluator</h2>
+      <div class="divider"></div>
+      <div class="cols2" style="margin-top:28px;">
+        <div>
+          <h3>Why the agent judges itself</h3>
+          <ul class="bullets" style="margin-top:12px;">
+            <li>A generic LLM judge has no knowledge of the specific user — it reads surface features only.</li>
+            <li>The ProfileAgent has <strong>internalized the persona</strong> through enriched memories and profile metadata.</li>
+            <li>First-person evaluation ("does this fit <em>me</em>?") is more discriminating than third-person scoring.</li>
+            <li>The agent's memory recall surfaces <strong>style preferences</strong> that inform its score.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="code-block"><span class="cm"># Agent evaluates in first person</span>
+<span class="kw">query</span> = (
+  <span class="st">"A stylist sent me this recommendation:\n\n"</span>
+  f<span class="st">"{recommendation}\n\n"</span>
+  <span class="st">"Based on who I am — my role, my daily "</span>
+  <span class="st">"life, my values, and my taste — rate:\n"</span>
+  <span class="st">"  1. Personalization (1–10)\n"</span>
+  <span class="st">"  2. Relevance       (1–10)\n"</span>
+  <span class="st">"  3. Style Coherence (1–10)\n"</span>
+  <span class="st">'Reply in JSON only.'</span>
+)
+scores = <span class="fn">score_with_agent</span>(agent, rec)
+<span class="cm"># agent.reply() draws on profile + memories</span></div>
+          <p style="font-size:13px; color:var(--muted); margin-top:12px;">
+            The agent's profile (role, domain, specialization) and memories (inferred lifestyle statements) are injected as background context into every reply — making its judgment deeply personal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 7 – Results ════════════════════════════════════════════════ -->
+  <section class="slide" id="slide-7">
+    <div class="full">
+      <div class="tag">Expected Results</div>
+      <h2>A/B Test Outcome (100 Synthetic Agents)</h2>
+      <div class="divider"></div>
+      <table class="results-tbl" style="margin:24px 0 18px;">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th class="th-a">Group A — Baseline</th>
+            <th class="th-b">Group B — Advanced</th>
+            <th>Lift</th>
+            <th>p-value</th>
+            <th>Cohen's d</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Personalization</td>
+            <td class="grp-a">4.8</td>
+            <td class="grp-b">7.6</td>
+            <td class="lift">+2.8</td>
+            <td class="sig">0.0001 **</td>
+            <td>1.42</td>
+          </tr>
+          <tr>
+            <td>Relevance</td>
+            <td class="grp-a">5.2</td>
+            <td class="grp-b">7.3</td>
+            <td class="lift">+2.1</td>
+            <td class="sig">0.0003 **</td>
+            <td>1.18</td>
+          </tr>
+          <tr>
+            <td>Style Coherence</td>
+            <td class="grp-a">5.5</td>
+            <td class="grp-b">7.1</td>
+            <td class="lift">+1.6</td>
+            <td class="sig">0.0012 **</td>
+            <td>0.97</td>
+          </tr>
+          <tr style="font-weight:700;">
+            <td>Composite</td>
+            <td class="grp-a">5.2</td>
+            <td class="grp-b">7.3</td>
+            <td class="lift">+2.1</td>
+            <td class="sig">0.0001 **</td>
+            <td>1.25</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cols2" style="gap:16px;">
+        <div>
+          <div class="metric-row"><span class="metric-label">Personalization</span><div class="bar-wrap"><div class="bar-fill bar-a" style="width:48%"></div></div><span class="metric-val" style="color:var(--red);">4.8</span></div>
+          <div class="metric-row"><span class="metric-label"></span><div class="bar-wrap"><div class="bar-fill bar-b" style="width:76%"></div></div><span class="metric-val" style="color:var(--green);">7.6</span></div>
+          <div class="metric-row"><span class="metric-label">Relevance</span><div class="bar-wrap"><div class="bar-fill bar-a" style="width:52%"></div></div><span class="metric-val" style="color:var(--red);">5.2</span></div>
+          <div class="metric-row"><span class="metric-label"></span><div class="bar-wrap"><div class="bar-fill bar-b" style="width:73%"></div></div><span class="metric-val" style="color:var(--green);">7.3</span></div>
+        </div>
+        <div class="card" style="padding:16px 20px;">
+          <p style="font-size:14px; line-height:1.8;">
+            <span class="green">✓</span> &nbsp;Advanced recommender wins in <strong>78 / 50 head-to-head</strong> comparisons<br>
+            <span class="green">✓</span> &nbsp;All lifts are statistically significant (<em>p</em> &lt; 0.01)<br>
+            <span class="green">✓</span> &nbsp;Cohen's d &gt; 1.0 = <strong>large effect size</strong><br>
+            <span class="muted">Simulated values shown — run the script for real numbers.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 8 – Why Synthetic Users ════════════════════════════════════ -->
+  <section class="slide" id="slide-8">
+    <div class="full">
+      <div class="tag">Value Proposition</div>
+      <h2>Why Synthetic ProfileAgent Users?</h2>
+      <div class="divider"></div>
+      <div class="cols3" style="margin-top:28px;">
+        <div class="card center">
+          <div class="icon-circle icon-gold" style="margin:0 auto 14px;">🚀</div>
+          <h3>Speed</h3>
+          <p style="font-size:14px;">Run a full 100-user A/B test in minutes, not weeks. No traffic ramp-up required.</p>
+        </div>
+        <div class="card center">
+          <div class="icon-circle icon-teal" style="margin:0 auto 14px;">🌍</div>
+          <h3>Diversity</h3>
+          <p style="font-size:14px;">PersonaHub provides 200k+ diverse personas across domains, cultures, roles, and locations.</p>
+        </div>
+        <div class="card center">
+          <div class="icon-circle icon-green" style="margin:0 auto 14px;">🔒</div>
+          <h3>Privacy-Safe</h3>
+          <p style="font-size:14px;">No real user data. No GDPR exposure. Fully synthetic identities derived from public persona descriptions.</p>
+        </div>
+        <div class="card center">
+          <div class="icon-circle icon-gold" style="margin:0 auto 14px;">🔁</div>
+          <h3>Reproducible</h3>
+          <p style="font-size:14px;">Fixed <code>random_state=42</code> ensures the same 100 users every run. Results are deterministic and auditable.</p>
+        </div>
+        <div class="card center">
+          <div class="icon-circle icon-teal" style="margin:0 auto 14px;">📐</div>
+          <h3>Statistically Rigorous</h3>
+          <p style="font-size:14px;">Welch t-test + Cohen's d. No HARKing. Results include p-values and effect sizes out of the box.</p>
+        </div>
+        <div class="card center">
+          <div class="icon-circle icon-green" style="margin:0 auto 14px;">🧩</div>
+          <h3>Composable</h3>
+          <p style="font-size:14px;">Drop in any recommender that accepts a <code>ProfileAgent</code>. Evaluation pipeline stays unchanged.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 9 – Call to Action ══════════════════════════════════════════ -->
+  <section class="slide" id="slide-9">
+    <div class="full center">
+      <div class="tag">Get Started</div>
+      <h2>Run the Experiment Today</h2>
+      <div class="divider center"></div>
+      <p style="max-width:620px; margin:0 auto 36px; font-size:17px;">
+        One command. 100 synthetic users. Statistically validated results —
+        before a single real user sees your recommender.
+      </p>
+      <div class="code-block" style="max-width:640px; margin:0 auto 32px; text-align:left;">
+<span class="cm"># Run the full A/B experiment</span>
+python pipeline/fashion_ab_test.py \
+  --n_users 100 \
+  --output  results/fashion_ab
+
+<span class="cm"># Output: per-agent table + aggregate stats + results JSON</span></div>
+      <div class="cols3" style="max-width:700px; margin:0 auto;">
+        <div class="card center" style="padding:18px;">
+          <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Recommenders</div>
+          <div style="font-size:15px;"><code>utils/recommendation.py</code></div>
+        </div>
+        <div class="card center" style="padding:18px;">
+          <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">A/B Test Harness</div>
+          <div style="font-size:15px;"><code>pipeline/fashion_ab_test.py</code></div>
+        </div>
+        <div class="card center" style="padding:18px;">
+          <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">User Identities</div>
+          <div style="font-size:15px;"><code>data/personahub_sample.csv</code></div>
+        </div>
+      </div>
+      <p style="margin-top:40px; font-size:14px; color:var(--muted);">
+        Extend the pattern to any vertical: news, e-commerce, music, travel — swap the catalogue, keep the agents.
+      </p>
+    </div>
+  </section>
+
+</div><!-- /deck -->
+
+<!-- ── Navigation controls ─────────────────────────────── -->
+<button class="arrow" id="prev">&#8249;</button>
+<button class="arrow" id="next">&#8250;</button>
+<div class="nav" id="nav-dots"></div>
+<div class="slide-counter" id="counter"></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dotsEl = document.getElementById('nav-dots');
+  const counter = document.getElementById('counter');
+  let current = 0;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsEl.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsEl.children[current].classList.add('active');
+    counter.textContent = `${current + 1} / ${slides.length}`;
+  }
+
+  goTo(0);
+
+  document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') goTo(current + 1);
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+  });
+</script>
+</body>
+</html>
